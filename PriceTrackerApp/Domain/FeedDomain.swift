@@ -8,4 +8,7 @@ import Foundation
 import Combine
 
 protocol PriceFeedService: AnyObject {
+    var connectionStatus: ConnectionStatus { get }
+    func start()
+    func stop()
 }

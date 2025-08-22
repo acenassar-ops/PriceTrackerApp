@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct FeedView: View {
+    @StateObject var viewModel: FeedViewModel
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            HStack {
+                Text(viewModel.connection.title)
+                    .font(.title)
+                Spacer()
+                Button(viewModel.isRunning ? "Stop" : "Start") {
+                    viewModel.toggleRun()
+                }
+                .buttonStyle(.borderedProminent)
+            }
+            .padding()
         }
-        .padding()
+        .navigationTitle("Live Prices")
     }
 }
 
 #Preview {
-    FeedView()
+    let container = AppContainer()
+    FeedView(viewModel: .init(priceFeed: container.priceFeed))
 }
