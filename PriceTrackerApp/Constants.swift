@@ -5,6 +5,8 @@
 //  Created by Christopher Nassar on 22/08/2025.
 //
 
+import Foundation
+
 let wsLink: String = "wss://ws.postman-echo.com/raw"
 
 enum ConnectionStatus: Equatable {
@@ -28,4 +30,12 @@ enum Symbols {
         "ORCL","IBM","ADBE","CRM","SHOP","UBER","LYFT","SQ","PYPL","TWTR",
         "BABA","NIO","PLTR","SPOT","SNOW"
     ]
+}
+
+func priceFormatter(value: Double, min: Int = 2, max: Int = 2) -> String {
+    let nf = NumberFormatter()
+    nf.numberStyle = .decimal
+    nf.minimumFractionDigits = min
+    nf.maximumFractionDigits = max
+    return nf.string(from: NSNumber(value: value)) ?? "—"
 }

@@ -17,6 +17,9 @@ final class FeedViewModel: ObservableObject {
     private let priceFeed: PriceFeedService
     private var cancellables = Set<AnyCancellable>()
     
+    // local store to compute sorted rows
+    private var latestQuotes: [String: SymbolQuote] = [:]
+    
     init(priceFeed: PriceFeedService) {
         self.priceFeed = priceFeed
         bind()
@@ -35,6 +38,21 @@ final class FeedViewModel: ObservableObject {
                 self?.isRunning = st == .connected
             }
             .store(in: &cancellables)
+        
+        priceFeed.quoteStatus
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] quote in
+                guard let self else { return }
+                self.latestQuotes[quote.symbol] = quote
+                self.rows = self.makeRows(from: self.latestQuotes)
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func makeRows(from dict: [String: SymbolQuote]) -> [Row] {
+        dict.values
+            .sorted(by: { $0.price > $1.price })
+            .map { q in Row(symbol: q.symbol, priceText: priceFormatter(value: q.price), isUp: q.isUp) }
     }
 }
 

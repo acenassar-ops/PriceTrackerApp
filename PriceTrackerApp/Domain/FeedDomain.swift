@@ -9,6 +9,7 @@ import Combine
 
 protocol PriceFeedService: AnyObject {
     var connectionStatus: AnyPublisher<ConnectionStatus, Never> { get }
+    var quoteStatus: AnyPublisher<SymbolQuote, Never> { get }
     func start()
     func stop()
 }
