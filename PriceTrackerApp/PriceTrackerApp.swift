@@ -26,6 +26,7 @@ final class AppContainer: ObservableObject {
         guard let url = URL(string: wsLink) else {
             fatalError( "Invalid URL" )
         }
-        self.priceFeed = WebSocketPriceFeedService(url: url)
+        self.priceFeed = WebSocketPriceFeedService(url: url,
+                                                   symbols: Symbols.defaultList)
     }
 }

@@ -21,3 +21,11 @@ enum ConnectionStatus: Equatable {
         }
     }
 }
+
+enum Symbols {
+    static let defaultList: [String] = [
+        "AAPL","GOOG","TSLA","AMZN","MSFT","NVDA","NFLX","META","AMD","INTC",
+        "ORCL","IBM","ADBE","CRM","SHOP","UBER","LYFT","SQ","PYPL","TWTR",
+        "BABA","NIO","PLTR","SPOT","SNOW"
+    ]
+}
