@@ -22,6 +22,12 @@ struct FeedView: View {
                 .buttonStyle(.borderedProminent)
             }
             .padding()
+            List(viewModel.rows) { row in
+                NavigationLink(value: row.symbol) {
+                    QuoteRowView(symbol: row.symbol, priceText: row.priceText, isUp: row.isUp)
+                }
+            }
+            .listStyle(.plain)
         }
         .navigationTitle("Live Prices")
     }
