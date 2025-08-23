@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 
-@MainActor
 final class DetailViewModel: ObservableObject {
     @Published private(set) var quote: SymbolQuote?
     

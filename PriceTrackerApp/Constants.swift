@@ -31,11 +31,3 @@ enum Symbols {
         "BABA","NIO","PLTR","SPOT","SNOW"
     ]
 }
-
-func priceFormatter(value: Double, min: Int = 2, max: Int = 2) -> String {
-    let nf = NumberFormatter()
-    nf.numberStyle = .decimal
-    nf.minimumFractionDigits = min
-    nf.maximumFractionDigits = max
-    return nf.string(from: NSNumber(value: value)) ?? "—"
-}

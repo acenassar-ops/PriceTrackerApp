@@ -6,11 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		AA3D66602E59F07100AD38D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAA8E3B32E58760800B9492F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAA8E3BA2E58760800B9492F;
+			remoteInfo = PriceTrackerApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		AA3D665C2E59F07100AD38D0 /* PriceTrackerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PriceTrackerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA8E3BB2E58760800B9492F /* PriceTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PriceTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		AA3D665D2E59F07100AD38D0 /* PriceTrackerAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PriceTrackerAppTests;
+			sourceTree = "<group>";
+		};
 		AAA8E3BD2E58760800B9492F /* PriceTrackerApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = PriceTrackerApp;
@@ -19,6 +35,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AA3D66592E59F07100AD38D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AAA8E3B82E58760800B9492F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				AAA8E3BD2E58760800B9492F /* PriceTrackerApp */,
+				AA3D665D2E59F07100AD38D0 /* PriceTrackerAppTests */,
 				AAA8E3BC2E58760800B9492F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				AAA8E3BB2E58760800B9492F /* PriceTrackerApp.app */,
+				AA3D665C2E59F07100AD38D0 /* PriceTrackerAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +73,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AA3D665B2E59F07100AD38D0 /* PriceTrackerAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA3D66622E59F07100AD38D0 /* Build configuration list for PBXNativeTarget "PriceTrackerAppTests" */;
+			buildPhases = (
+				AA3D66582E59F07100AD38D0 /* Sources */,
+				AA3D66592E59F07100AD38D0 /* Frameworks */,
+				AA3D665A2E59F07100AD38D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA3D66612E59F07100AD38D0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AA3D665D2E59F07100AD38D0 /* PriceTrackerAppTests */,
+			);
+			name = PriceTrackerAppTests;
+			packageProductDependencies = (
+			);
+			productName = PriceTrackerAppTests;
+			productReference = AA3D665C2E59F07100AD38D0 /* PriceTrackerAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AAA8E3BA2E58760800B9492F /* PriceTrackerApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAA8E3C62E58760900B9492F /* Build configuration list for PBXNativeTarget "PriceTrackerApp" */;
@@ -80,6 +128,10 @@
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
+					AA3D665B2E59F07100AD38D0 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = AAA8E3BA2E58760800B9492F;
+					};
 					AAA8E3BA2E58760800B9492F = {
 						CreatedOnToolsVersion = 16.4;
 					};
@@ -100,11 +152,19 @@
 			projectRoot = "";
 			targets = (
 				AAA8E3BA2E58760800B9492F /* PriceTrackerApp */,
+				AA3D665B2E59F07100AD38D0 /* PriceTrackerAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AA3D665A2E59F07100AD38D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AAA8E3B92E58760800B9492F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +175,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AA3D66582E59F07100AD38D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AAA8E3B72E58760800B9492F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +191,49 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AA3D66612E59F07100AD38D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAA8E3BA2E58760800B9492F /* PriceTrackerApp */;
+			targetProxy = AA3D66602E59F07100AD38D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		AA3D66632E59F07100AD38D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cn.PriceTrackerAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PriceTrackerApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PriceTrackerApp";
+			};
+			name = Debug;
+		};
+		AA3D66642E59F07100AD38D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cn.PriceTrackerAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PriceTrackerApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PriceTrackerApp";
+			};
+			name = Release;
+		};
 		AAA8E3C42E58760900B9492F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -301,6 +410,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AA3D66622E59F07100AD38D0 /* Build configuration list for PBXNativeTarget "PriceTrackerAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA3D66632E59F07100AD38D0 /* Debug */,
+				AA3D66642E59F07100AD38D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AAA8E3B62E58760800B9492F /* Build configuration list for PBXProject "PriceTrackerApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

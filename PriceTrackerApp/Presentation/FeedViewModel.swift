@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 
-@MainActor
 final class FeedViewModel: ObservableObject {
     @Published var isRunning: Bool = false
     @Published private(set) var connection: ConnectionStatus = .disconnected
