@@ -118,6 +118,7 @@ final class WebSocketPriceFeedService: PriceFeedService {
         }
     }
     
+    // This is used to display the latest symbol acquired
     func latestQuote(for symbol: String) -> SymbolQuote? {
         return quotes.first(where: {$0.symbol == symbol})
     }

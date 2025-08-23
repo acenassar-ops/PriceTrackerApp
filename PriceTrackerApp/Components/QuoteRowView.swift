@@ -27,7 +27,6 @@ struct QuoteRowView: View {
         }
         .contentShape(Rectangle())
         .onAppear { triggerFlash() }
-        .onChange(of: priceText) {_ in triggerFlash() }
     }
     
     private func triggerFlash() {
