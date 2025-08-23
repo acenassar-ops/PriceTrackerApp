@@ -15,11 +15,11 @@ enum ConnectionStatus: Equatable {
     var title: String {
         switch self {
         case .disconnected:
-            return "Disconnected"
+            return "🔴 Disconnected"
         case .connecting:
             return "Connecting..."
         case .connected:
-            return "Connected"
+            return "🟢 Connected"
         }
     }
 }
