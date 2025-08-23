@@ -14,7 +14,7 @@ final class RandomPriceGenerator {
 
         // apply a small random drift up or down
         let changePercent = Double.random(in: -0.015...0.015)
-        let next = max(0.01, base * changePercent)
+        let next = max(0.01, base * (1 + changePercent))
 
         lastPrices[symbol] = next
         return (next, previous)
