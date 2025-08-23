@@ -13,7 +13,9 @@ struct PriceTrackerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            FeedView(viewModel: FeedViewModel(priceFeed: container.priceFeed))
+            NavigationStack {
+                FeedView(viewModel: FeedViewModel(priceFeed: container.priceFeed))
+            }
         }.environmentObject(container)
     }
 }

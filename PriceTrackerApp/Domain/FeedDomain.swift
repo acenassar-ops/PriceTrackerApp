@@ -12,6 +12,7 @@ protocol PriceFeedService: AnyObject {
     var quoteStatus: AnyPublisher<SymbolQuote, Never> { get }
     func start()
     func stop()
+    func latestQuote(for symbol: String) -> SymbolQuote?
 }
 
 struct SymbolQuote: Identifiable, Equatable {

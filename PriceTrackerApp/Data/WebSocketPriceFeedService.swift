@@ -8,15 +8,14 @@ import Foundation
 import Combine
 
 final class WebSocketPriceFeedService: PriceFeedService {
-
+    
     @Published private(set) var connection: ConnectionStatus = .disconnected
     var connectionStatus: AnyPublisher<ConnectionStatus, Never> { $connection.eraseToAnyPublisher() }
     
-    @Published private(set) var quote: SymbolQuote = .init(symbol: "",
-                                                           price: 0,
-                                                           previousPrice: nil,
-                                                           lastUpdate: Date())
-    var quoteStatus: AnyPublisher<SymbolQuote, Never> { $quote.eraseToAnyPublisher() }
+    @Published private(set) var quote: SymbolQuote?
+    var quoteStatus: AnyPublisher<SymbolQuote, Never> { $quote.compactMap { $0 }.eraseToAnyPublisher() }
+    
+    private(set) var quotes = [SymbolQuote]()
     
     private let url: URL
     private var session: URLSession!
@@ -42,6 +41,7 @@ final class WebSocketPriceFeedService: PriceFeedService {
         t.resume()
         connection = .connected
         
+        quotes.removeAll()
         startReceiving()
         startSendingTicks()
     }
@@ -105,6 +105,7 @@ final class WebSocketPriceFeedService: PriceFeedService {
                         let prev = (json["previous"] as? NSNumber)?.doubleValue
                         let quote = SymbolQuote(symbol: symbol, price: price, previousPrice: prev, lastUpdate: Date())
                         self.quote = quote
+                        quotes.append(quote)
                     }
                 case .data(let data):
                     // Handle binary if needed (not used here)
@@ -115,6 +116,10 @@ final class WebSocketPriceFeedService: PriceFeedService {
                 if receiveLoopActive { self.receiveNext() }
             }
         }
+    }
+    
+    func latestQuote(for symbol: String) -> SymbolQuote? {
+        return quotes.first(where: {$0.symbol == symbol})
     }
     
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FeedView: View {
+    @EnvironmentObject private var container: AppContainer
     @StateObject var viewModel: FeedViewModel
     
     var body: some View {
@@ -30,6 +31,9 @@ struct FeedView: View {
             .listStyle(.plain)
         }
         .navigationTitle("Live Prices")
+        .navigationDestination(for: String.self) { sym in
+            DetailView(viewModel: DetailViewModel(symbol: sym, priceFeed: container.priceFeed))
+        }
     }
 }
 
