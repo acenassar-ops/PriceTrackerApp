@@ -11,11 +11,11 @@ import Combine
 final class DetailViewModel: ObservableObject {
     @Published private(set) var quote: SymbolQuote?
     
-    private let priceFeed: PriceFeedService
+    private let priceFeed: PriceFeedServiceProtocol
     private var cancellables = Set<AnyCancellable>()
     private let symbol: String
     
-    init(symbol: String, priceFeed: PriceFeedService) {
+    init(symbol: String, priceFeed: PriceFeedServiceProtocol) {
         self.symbol = symbol
         self.priceFeed = priceFeed
         self.quote = priceFeed.latestQuote(for: symbol)

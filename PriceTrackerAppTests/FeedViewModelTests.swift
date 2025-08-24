@@ -9,7 +9,7 @@ import Testing
 import Combine
 @testable import PriceTrackerApp
 
-final class MockPriceFeedService: PriceFeedService {
+final class MockPriceFeedService: PriceFeedServiceProtocol {
     // Subjects simulate publishers
     let connectionStatusSubject = PassthroughSubject<ConnectionStatus, Never>()
     let quoteSubject = PassthroughSubject<SymbolQuote, Never>()

@@ -13,13 +13,13 @@ final class FeedViewModel: ObservableObject {
     @Published private(set) var connection: ConnectionStatus = .disconnected
     @Published private(set) var rows: [Row] = []
     
-    private let priceFeed: PriceFeedService
+    private let priceFeed: PriceFeedServiceProtocol
     private var cancellables = Set<AnyCancellable>()
     
     // local store to compute sorted rows
     private var latestQuotes: [String: SymbolQuote] = [:]
     
-    init(priceFeed: PriceFeedService) {
+    init(priceFeed: PriceFeedServiceProtocol) {
         self.priceFeed = priceFeed
         bind()
     }

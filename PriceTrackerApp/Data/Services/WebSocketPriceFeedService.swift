@@ -7,7 +7,7 @@
 import Foundation
 import Combine
 
-final class WebSocketPriceFeedService: PriceFeedService {
+final class WebSocketPriceFeedService: PriceFeedServiceProtocol {
     
     @Published private(set) var connection: ConnectionStatus = .disconnected
     var connectionStatus: AnyPublisher<ConnectionStatus, Never> { $connection.eraseToAnyPublisher() }
